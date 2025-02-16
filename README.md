@@ -4,7 +4,7 @@
 This project demonstrates a simple **HMAC (Hash-based Message Authentication Code)** authentication system between two applications. One application (**Sender**) sends a JSON-formatted message along with an HMAC signature, while the other application (**Receiver**) verifies the integrity and authenticity of the message.
 
 ## How It Works
-1. The **Sender** creates a JSON payload with a message.
+1. The Sender creates a JSON payload with a message.
 2. The Sender computes an **HMAC signature** for the message using a secret key.
 3. The message is **Base64-encoded** and stored in a file along with the HMAC signature.
 4. The **Receiver** reads the encoded message and signature from the file.
