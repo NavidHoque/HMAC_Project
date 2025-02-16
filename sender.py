@@ -6,13 +6,10 @@ import json
 
 def compute_hmac(message: str, secret_key: str) -> str:
     """Computes the HMAC for a given message.
-
     Uses SHA-256 and encodes the digest in Base64.
-
     Args:
         message (str): The message to compute the HMAC for.
         secret_key (str): The secret key used for HMAC computation.
-
     Returns:
         str: The computed HMAC encoded in Base64.
     """
