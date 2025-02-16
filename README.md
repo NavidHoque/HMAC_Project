@@ -30,4 +30,13 @@ This project demonstrates a simple **HMAC (Hash-based Message Authentication Cod
 
 ```sh
 python sender.py
+```
+## Run the Receiver Application
+- The receiver reads the **encoded message** and **HMAC signature** from `message.txt`.
+- It verifies if the message is **authentic** and prints the decoded message.
+
+```sh
+python receiver.py
+```
+
 
