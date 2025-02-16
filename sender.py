@@ -26,9 +26,7 @@ with open("secret_key.txt", "r") as file:
 
 # Sample payload to send
 payload = {
-    "username": "Navid",
-    "action": "login",
-    "timestamp": 1700000000  # Example timestamp
+    "username": "Hello, This is a secure message!"
 }
 
 # Convert payload to JSON format
