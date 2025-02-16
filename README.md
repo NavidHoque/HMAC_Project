@@ -38,5 +38,18 @@ python sender.py
 ```sh
 python receiver.py
 ```
+## Expected Output
+
+### **Sender Output**
+- Prints the **Base64-encoded message**.
+- Prints the **HMAC signature**.
+- Saves the data to `message.txt`.
+
+### **Receiver Output**
+- Prints the **received encoded message**.
+- Prints the **received HMAC signature**.
+- Prints the **secret key used for verification**.
+- Prints a **success message** if verification passes or an **error message** if the message is tampered with.
+
 
 
