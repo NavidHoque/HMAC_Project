@@ -27,15 +27,23 @@ with open("secret_key.txt", "r") as file:
 # Read message and HMAC from file
 with open("message.txt", "r") as file:
     lines = file.readlines()
-    received_message = lines[0].strip()
+    encoded_message = lines[0].strip()
     received_hmac = lines[1].strip()
 
+# Print received encoded message, HMAC signature, and secret key
+print("Received Encoded Message (Base64):", encoded_message)
+print("Received HMAC Signature:", received_hmac)
+print("Secret Key Used for Verification:", secret_key)
+
+# Decode the Base64-encoded message
+decoded_message = base64.b64decode(encoded_message).decode()
+
 # Compute expected HMAC
-expected_hmac = compute_hmac(received_message, secret_key)
+expected_hmac = compute_hmac(decoded_message, secret_key)
 
 # Verify HMAC
 if hmac.compare_digest(received_hmac, expected_hmac):
     print("HMAC verified! Message is authentic.")
-    print("Received payload:", json.loads(received_message))
+    print("Decoded Message:", json.loads(decoded_message)["message"])
 else:
     print("HMAC verification failed! Message may be tampered with.")
